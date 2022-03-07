@@ -1,6 +1,3 @@
-
-
-
 def findallstrobogramaticnumbers(firstNumber: int, lastNumber: int):
     if firstNumber >= lastNumber:
         return "Error: The first number entered must always have a value less than the second number entered"
