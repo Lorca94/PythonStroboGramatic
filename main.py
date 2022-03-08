@@ -4,22 +4,23 @@ def findallstrobogramaticnumbers(firstNumber: int, lastNumber: int):
     else:
         listStrobo = []
         b = 0
-        for x in range(firstNumber, lastNumber + 1):
-            if x > 10:
-                listProve = []
-                xDigit = [int(a) for a in str(x)]
-                for i in xDigit:
+        for actualNumber in range(firstNumber, lastNumber + 1):
+            if actualNumber > 10:
+                reverseDigit = []
+                actualnumberdigit = [int(a) for a in str(actualNumber)]
+                for i in actualnumberdigit:
                     if i == 6 or i == 9:
                         if i == 6:
-                            listProve.append(9)
+                            reverseDigit.append(9)
                         else:
-                            listProve.append(6)
+                            reverseDigit.append(6)
                     else:
-                        listProve.append(i);
-                listProve.reverse()
-                if listProve == xDigit:
-                    listStrobo.append(x)
-        return listStrobo
+                        reverseDigit.append(i);
+                reverseDigit.reverse()
+                if reverseDigit == actualnumberdigit:
+                    actualnumberrev = ''.join(map(str, reverseDigit))
+                    listStrobo.append(actualnumberrev)
+        return listStrobo, len(listStrobo)
 
 
 print(findallstrobogramaticnumbers(1, 2000));
